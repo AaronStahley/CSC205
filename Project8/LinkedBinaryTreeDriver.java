@@ -1,3 +1,8 @@
+//Program Name : LinkedBinaryTreeDriver.java
+//Author : Aaron Stahley	
+//Date Written: 4/27/2015
+//Class : LinkedBinaryTreeDriver
+
 package Project8;
 
 import java.util.Iterator;
@@ -71,23 +76,22 @@ public class LinkedBinaryTreeDriver {
 		System.out.println();
 		
 		// Removing the MIN value in the tree. 
+		System.out.println("Removing the max value which is: " + Tree.removeMin());
 		System.out.println("After removing the Min and the max Value: " + Tree.toString());
 		
 		System.out.println();
 		
 		// finding a specific node.
-		System.out.println(Tree.find(15));
-
-
+		// Tests to see if the .find method works when the value is in the tree.
 		
+		System.out.println("The value: " + Tree.find(15) + " does exist in the tree.");
+	
+		// Tests to see if the .find method works when the value is not in the tree. 
+		Tree.find(1);
+		System.out.println(); // Throws exception because 1 was removed from the tree. 
 		
-		
-
-
-		
-
-		
-
 	}
-
 }
+		
+
+	

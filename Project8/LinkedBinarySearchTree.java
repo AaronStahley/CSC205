@@ -1,3 +1,8 @@
+//Program Name : LinkedBinarySearchTree.java
+//Author : Aaron Stahley	
+//Date Written: 4/27/2015
+//Class : LinkedBinarySearchTree
+
 package Project8;
 
 import jsjf.exceptions.*;
@@ -283,11 +288,13 @@ public class LinkedBinarySearchTree<T> extends LinkedBinaryTree<T>
             {
                 BinaryTreeNode<T> parent = root;
                 BinaryTreeNode<T> current = root.left;
+                
                 while (current.left != null) 
                 {
                     parent = current;
                     current = current.left;
                 }
+                
                 result =  current.element;
                 parent.left = current.right;
             }
@@ -325,11 +332,13 @@ public class LinkedBinarySearchTree<T> extends LinkedBinaryTree<T>
              {
                  BinaryTreeNode<T> parent = root;
                  BinaryTreeNode<T> current = root.right;
+                 
                  while (current.right != null) 
                  {
                      parent = current;
                      current = current.right;
                  }
+                 
                  result =  current.element;
                  parent.right = current.left;
              }
@@ -397,7 +406,14 @@ public class LinkedBinarySearchTree<T> extends LinkedBinaryTree<T>
      */
     public T find(T targetElement) throws ElementNotFoundException 
     {
-        return findNode(targetElement, root).getElement();
+    	BinaryTreeNode<T> ret = findNode(targetElement,root);
+    	
+    	if (ret == null){
+            throw new ElementNotFoundException("LinkedBinaryTree");
+    	}
+    	
+    	return(ret.getElement());
+    	
     }
     
     /**
